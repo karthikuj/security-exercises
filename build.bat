@@ -1,0 +1,2 @@
+cl /nologo /EHsc securing-anonymous-sections-privileged.cpp /link /out:privileged.exe && del securing-anonymous-sections-privileged.obj
+cl /nologo /EHsc securing-anonymous-sections-lesser-privileged.cpp /link /out:lesser-privileged.exe && del securing-anonymous-sections-lesser-privileged.obj
