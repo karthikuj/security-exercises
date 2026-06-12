@@ -5,7 +5,8 @@ int main() {
     
     // TODO: add a check to ensure process is running as admin, return if not.
     // step 1: create an anonymous section
-    HANDLE hSection = CreateFileMappingW(INVALID_HANDLE_VALUE, nullptr, PAGE_READWRITE, 0, 4096, nullptr);
+    LPCWSTR sectionName = L"AnonymousSection"; // anonymous section
+    HANDLE hSection = CreateFileMappingW(INVALID_HANDLE_VALUE, nullptr, PAGE_READWRITE, 0, 4096, sectionName);
     if (hSection == nullptr) {
         std::cerr << "Failed to create file mapping: " << GetLastError() << std::endl;
         return 1;
